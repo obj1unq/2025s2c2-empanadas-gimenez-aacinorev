@@ -17,13 +17,22 @@ object galvan{
     var deuda = 0
     var dinero = 0
 
+    method sueldo(){
+        return sueldo
+    }
+
+    method dinero(){
+        return dinero
+    }
+
+    method deuda(){
+        return deuda
+    }
+
     method cambiarSueldo(valor){
         sueldo = valor
     }
 
-    method sueldo(){
-        return sueldo
-    }
 
     method cobrarSueldo(){
         dinero = dinero + sueldo
@@ -38,14 +47,6 @@ object galvan{
         else 
             deuda = deuda - dinero
             dinero = 0
-    }
-
-    method dinero(){
-        return dinero
-    }
-
-    method deuda(){
-        return deuda
     }
 
     method gastar(cuanto){
