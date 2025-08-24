@@ -14,6 +14,8 @@ object gimenez {
 
 object galvan{
     var sueldo = 15000
+    var deuda = 0
+    var dinero = 0
 
     method cambiarSueldo(valor){
         sueldo = valor
@@ -24,7 +26,33 @@ object galvan{
     }
 
     method cobrarSueldo(){
-        return "Cobré :)"
+        dinero = sueldo
+        self.pagarDeudas()
+    }
+
+    method pagarDeudas(){
+        if (dinero >= deuda){
+            deuda = 0
+            dinero = dinero + (dinero - deuda)
+        }
+        else 
+            deuda = deuda - dinero
+    }
+
+    method dinero(){
+        return dinero
+    }
+
+    method deuda(){
+        return deuda
+    }
+
+    method gastar(cuanto){
+        if (dinero >= cuanto){
+            dinero = dinero - cuanto
+        }
+        else
+            deuda = deuda + (cuanto - dinero)
     }
 
 }
