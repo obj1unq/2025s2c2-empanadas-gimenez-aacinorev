@@ -21,8 +21,20 @@ object galvan{
         return sueldo
     }
 
+    method sueldo(_sueldo){
+        sueldo = _sueldo
+    }
+
     method dinero(){
         return dinero
+    }
+
+    method dinero(_dinero){
+        dinero = _dinero
+    }
+
+    method deuda(_deuda){
+        deuda = _deuda
     }
 
     method deuda(){
@@ -33,9 +45,8 @@ object galvan{
         sueldo = valor
     }
 
-
     method cobrarSueldo(){
-        dinero = dinero + sueldo
+        dinero= dinero + sueldo
         self.pagarDeudas()
     }
 
@@ -44,18 +55,20 @@ object galvan{
             dinero = dinero - deuda
             deuda = 0
         }
-        else 
+        else{ 
             deuda = deuda - dinero
             dinero = 0
+        }
     }
 
     method gastar(cuanto){
         if (dinero >= cuanto){
             dinero = dinero - cuanto
         }
-        else
+        else{
             deuda = deuda + (cuanto - dinero)
             dinero = 0
+        }
     }
 
 }
